@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQI College of ICT — Class Schedule (September 2026)</title>
+    <meta name="description"
+        content="Official class schedule for SQI College of ICT, Software Engineering Department — September 2026 session.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --sqi-primary: #605DEC;
+            --sqi-primary-light: #7B78F2;
+            --sqi-accent: #FF6B35;
+            --sqi-accent-light: #FF8F64;
+            --bg: #F5F5FA;
+            --card-bg: #FFFFFF;
+            --text-dark: #1A1A2E;
+            --text-body: #3D3D56;
+            --text-muted: #8888A0;
+            --border: #E4E4EE;
+            --row-alt: #F9F9FE;
+            --success: #0D9668;
+            --warning: #C47F00;
+            --radius-lg: 12px;
+            --radius-md: 8px;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 20px 48px;
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .header-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            /* background: var(--sqi-primary); */
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        .logo-mark img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        .header-text h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        .header-text .dept-name {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.3px;
+        }
+
+        .schedule-title {
+            font-size: clamp(20px, 4vw, 28px);
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .schedule-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .meta-badge .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--success);
+        }
+
+        /* ========== TABLE CARD ========== */
+        .table-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* Desktop table */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead th {
+            background: var(--sqi-primary);
+            color: #FFFFFF;
+            padding: 13px 16px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        thead th:first-child {
+            padding-left: 20px;
+        }
+
+        thead th:last-child {
+            padding-right: 20px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s ease;
+        }
+
+        tbody tr:nth-child(even) {
+            background: var(--row-alt);
+        }
+
+        tbody tr:hover {
+            background: #EEEEF8;
+        }
+
+        tbody td {
+            padding: 13px 16px;
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-body);
+            vertical-align: top;
+            line-height: 1.55;
+        }
+
+        tbody td:first-child {
+            padding-left: 20px;
+        }
+
+        tbody td:last-child {
+            padding-right: 20px;
+        }
+
+        /* S/N column */
+        .sn-cell {
+            font-weight: 700;
+            color: var(--sqi-primary);
+            font-size: 14px;
+            width: 42px;
+        }
+
+        /* Level badge */
+        .level-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            background: #EEEDFC;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sqi-primary);
+            white-space: nowrap;
+        }
+
+        /* Course info */
+        .course-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 13px;
+            margin-bottom: 1px;
+        }
+
+        .course-days {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Time cell */
+        .time-cell {
+            font-weight: 600;
+            color: var(--success);
+            font-size: 13px;
+        }
+
+        .time-cohort {
+            display: block;
+            font-size: 10px;
+            color: var(--warning);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* Instructor */
+        .instructor-primary {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 13px;
+        }
+
+        .instructor-assist {
+            font-size: 12px;
+            color: var(--sqi-accent);
+            font-weight: 500;
+        }
+
+        /* Continuation row */
+        tr.continuation-row {
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr.continuation-row td {
+            padding-top: 4px;
+        }
+
+        /* ========== MOBILE CARDS (hidden on desktop) ========== */
+        .mobile-cards {
+            display: none;
+        }
+
+        .schedule-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-sn {
+            width: 28px;
+            height: 28px;
+            background: var(--sqi-primary);
+            color: #fff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .card-course-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        .card-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 6px 0;
+        }
+
+        .card-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 80px;
+            flex-shrink: 0;
+        }
+
+        .card-value {
+            font-size: 13px;
+            color: var(--text-body);
+            text-align: right;
+            flex: 1;
+        }
+
+        .card-value.time {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .card-value .cohort-tag {
+            font-size: 10px;
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .card-value .assist {
+            color: var(--sqi-accent);
+            font-size: 12px;
+        }
+
+        .card-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 6px 0;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            box-shadow: var(--shadow);
+        }
+
+        .footer-item .icon {
+            font-size: 14px;
+        }
+
+        .footer-tagline {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.3px;
+        }
+
+        .footer-tagline a {
+            color: var(--sqi-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-tagline a:hover {
+            text-decoration: underline;
+        }
+
+        .accent-line {
+            height: 3px;
+            background: var(--sqi-primary);
+            border-radius: 2px;
+            margin: 24px auto 0;
+            width: 60px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 14px 36px;
+            }
+
+            .header-brand {
+                gap: 10px;
+            }
+
+            .schedule-title {
+                font-size: 22px;
+            }
+
+            /* Hide desktop table, show mobile cards */
+            .table-card {
+                display: none;
+            }
+
+            .mobile-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .footer {
+                gap: 10px;
+            }
+
+            .footer-item {
+                padding: 7px 12px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-brand {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .header-text {
+                text-align: center;
+            }
+
+            .schedule-title {
+                font-size: 20px;
+            }
+
+            .schedule-meta {
+                gap: 8px;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-brand">
+                <div class="logo-mark">
+                    <img src="sqilogo-removebg.png" alt="SQI Logo">
+                </div>
+                <div class="header-text">
+                    <h2>SQI College of ICT</h2>
+                    <span class="dept-name">Software Engineering Department</span>
+                </div>
+            </div>
+
+            <h1 class="schedule-title">Class Schedule</h1>
+
+            <div class="schedule-meta">
+                <span class="meta-badge">
+                    <span class="dot"></span>
+                    September 2026 Cohort
+                </span>
+            </div>
+        </header>
+
+        <!-- Desktop Table -->
+        <div class="table-card">
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Level</th>
+                            <th>Course</th>
+                            <th>Time</th>
+                            <th>Venue</th>
+                            <th>Instructor(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1: SE 1 — August and September Cohorts -->
+                        <tr>
+                            <td class="sn-cell" rowspan="2">1</td>
+                            <td rowspan="2"><span class="level-badge">SE 1</span></td>
+                            <td rowspan="2">
+                                <div class="course-name">HTML, CSS & Intro to Web</div>
+                                <div class="course-days">MON – THURS</div>
+                            </td>
+                            <td>
+                                <span class="time-cell">10 AM – 12 PM</span>
+                                <span class="time-cohort">August Cohort</span>
+                            </td>
+                            <td>Main Hall</td>
+                            <td>
+                                <span class="instructor-primary">Mr. Femi</span>
+                            </td>
+                        </tr>
+                        <tr class="continuation-row">
+                            <td>
+                                <span class="time-cell">TBC</span>
+                                <span class="time-cohort">September Cohort</span>
+                            </td>
+                            <td>Main Hall</td>
+                            <td><span class="instructor-primary">Mr. Femi</span></td>
+                        </tr>
+
+                        <!-- Row 2: SE 2 -->
+                        <tr>
+                            <td class="sn-cell">2</td>
+                            <td><span class="level-badge">SE 2</span></td>
+                            <td>
+                                <div class="course-name">JS, VCS & Firebase</div>
+                                <div class="course-days">MON – THURS</div>
+                            </td>
+                            <td><span class="time-cell">8 AM – 10 NOON</span></td>
+                            <td>ND I Business Admin</td>
+                            <td>
+                                <span class="instructor-primary">Mr. Ademola / Mr. Oluwafemi</span><br>
+                                <span class="instructor-assist">Mr. Muhammad</span><br>
+                                <span class="instructor-assist">Miss Elizabeth</span>
+                            </td>
+                        </tr>
+
+                        <!-- Row 3: SE A3 -->
+                        <tr>
+                            <td class="sn-cell">3</td>
+                            <td><span class="level-badge">SE A3</span></td>
+                            <td>
+                                <div class="course-name">React & Node</div>
+                                <div class="course-days">MON – THURS</div>
+                            </td>
+                            <td><span class="time-cell">10 AM – 12 NOON</span></td>
+                            <td>ND II Accountancy</td>
+                            <td>
+                                <span class="instructor-primary">Mr. Daniel / Mr. Oluwafemi</span><br>
+                                <span class="instructor-assist">Miss Oladoyin</span>
+                            </td>
+                        </tr>
+
+                        <!-- Row 4: SE A4 -->
+                        <tr>
+                            <td class="sn-cell">4</td>
+                            <td><span class="level-badge">SE A4</span></td>
+                            <td>
+                                <div class="course-name">Next.js, GraphQL</div>
+                                <div class="course-days">MON – THURS</div>
+                            </td>
+                            <td><span class="time-cell">2 PM – 4 PM</span></td>
+                            <td>ND II Accountancy</td>
+                            <td>
+                                <span class="instructor-primary">Mr. Daniel</span><br>
+                                <span class="instructor-assist">Miss Elizabeth</span>
+                            </td>
+                        </tr>
+
+                        <!-- Row 5: SE B3 -->
+                        <tr>
+                            <td class="sn-cell">5</td>
+                            <td><span class="level-badge">SE B3</span></td>
+                            <td>
+                                <div class="course-name">Angular, PHP, SQL</div>
+                                <div class="course-days">MON – THURS</div>
+                            </td>
+                            <td><span class="time-cell">8 AM – 10 AM</span></td>
+                            <td>ND I Accountancy</td>
+                            <td><span class="instructor-primary">Ms. Anthonia</span></td>
+                        </tr>
+
+                        <!-- Row 6: SE 5 -->
+                        <tr>
+                            <td class="sn-cell">6</td>
+                            <td><span class="level-badge">SE 5</span></td>
+                            <td>
+                                <div class="course-name">DSA, Intro to Cloud Ops</div>
+                                <div class="course-days">MON, TUE</div>
+                            </td>
+                            <td><span class="time-cell">10 AM – 12 NOON</span></td>
+                            <td>ND I Accountancy</td>
+                            <td>
+                                <span class="instructor-primary">Mr. Oluwafemi</span><br>
+                                <span class="instructor-assist">Miss Anthonia</span>
+                            </td>
+                        </tr>
+
+                        <!-- Row 7: NV (Flutter Dart) -->
+                        <tr>
+                            <td class="sn-cell">7</td>
+                            <td><span class="level-badge">NV</span></td>
+                            <td>
+                                <div class="course-name">Flutter Dart</div>
+                                <div class="course-days">WED – THURS</div>
+                            </td>
+                            <td><span class="time-cell">12 NOON – 2 PM</span></td>
+                            <td>ND I Accountancy</td>
+                            <td><span class="instructor-primary">Mr. Abdullahi / Mr. Cornelius</span></td>
+                        </tr>
+
+                        <!-- Row 8: NV (React Native) -->
+                        <tr>
+                            <td class="sn-cell">8</td>
+                            <td><span class="level-badge">NV</span></td>
+                            <td>
+                                <div class="course-name">React Native</div>
+                                <div class="course-days">WED, THUR</div>
+                            </td>
+                            <td><span class="time-cell">10 AM – 12 NOON</span></td>
+                            <td>ND I Accountancy</td>
+                            <td><span class="instructor-primary">Mr. Rejoice / Mr. Oluwafemi</span></td>
+                        </tr>
+
+                        <!-- Row 10: AI -->
+                        <tr>
+                            <td class="sn-cell">10</td>
+                            <td><span class="level-badge">AI</span></td>
+                            <td>
+                                <div class="course-name">Vibe Coding</div>
+                                <div class="course-days">Friday</div>
+                            </td>
+                            <td><span class="time-cell">8 AM – 12 NOON</span></td>
+                            <td>ND I Business Admin</td>
+                            <td>
+                                <span class="instructor-primary">Mr. Oluwafemi / Mr. Ademola</span><br>
+                                <span class="instructor-assist">Miss Anthonia</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Mobile Cards (visible only on small screens) -->
+        <div class="mobile-cards">
+
+            <!-- Card 1: SE 1 -->
+            <div class="schedule-card">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <div class="card-sn">1</div>
+                        <div>
+                            <div class="card-course-name">HTML, CSS & Intro to Web</div>
+                            <div class="course-days">MON – THURS</div>
+                        </div>
+                    </div>
+                    <span class="level-badge">SE 1</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">10 AM – 12 PM <span class="cohort-tag">(August Cohort)</span></span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">Main Hall</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Mr. Femi</span>
+                </div>
+                <div class="card-divider"></div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">TBC <span class="cohort-tag">(September Cohort)</span></span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">Main Hall</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Mr. Femi</span>
+                </div>
+            </div>
+
+            <!-- Card 2: SE 2 -->
+            <div class="schedule-card">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <div class="card-sn">2</div>
+                        <div>
+                            <div class="card-course-name">JS, VCS & Firebase</div>
+                            <div class="course-days">MON – THURS</div>
+                        </div>
+                    </div>
+                    <span class="level-badge">SE 2</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">8 AM – 10 NOON</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">ND I Business Admin</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Mr. Ademola / Mr. Oluwafemi<br><span class="assist">Mr. Muhammad · Miss Elizabeth</span></span>
+                </div>
+            </div>
+
+            <!-- Card 3: SE A3 -->
+            <div class="schedule-card">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <div class="card-sn">3</div>
+                        <div>
+                            <div class="card-course-name">React & Node</div>
+                            <div class="course-days">MON – THURS</div>
+                        </div>
+                    </div>
+                    <span class="level-badge">SE A3</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">10 AM – 12 NOON</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">ND II Accountancy</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Mr. Daniel / Mr. Oluwafemi<br><span class="assist">Miss Oladoyin</span></span>
+                </div>
+            </div>
+
+            <!-- Card 4: SE A4 -->
+            <div class="schedule-card">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <div class="card-sn">4</div>
+                        <div>
+                            <div class="card-course-name">Next.js, GraphQL</div>
+                            <div class="course-days">MON – THURS</div>
+                        </div>
+                    </div>
+                    <span class="level-badge">SE A4</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">2 PM – 4 PM</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">ND II Accountancy</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Mr. Daniel<br><span class="assist">Miss Elizabeth</span></span>
+                </div>
+            </div>
+
+            <!-- Card 5: SE B3 -->
+            <div class="schedule-card">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <div class="card-sn">5</div>
+                        <div>
+                            <div class="card-course-name">Angular, PHP, SQL</div>
+                            <div class="course-days">MON – THURS</div>
+                        </div>
+                    </div>
+                    <span class="level-badge">SE B3</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">8 AM – 10 AM</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">ND I Accountancy</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Ms. Anthonia</span>
+                </div>
+            </div>
+
+            <!-- Card 6: SE 5 -->
+            <div class="schedule-card">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <div class="card-sn">6</div>
+                        <div>
+                            <div class="card-course-name">DSA, Intro to Cloud Ops</div>
+                            <div class="course-days">MON, TUE</div>
+                        </div>
+                    </div>
+                    <span class="level-badge">SE 5</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">10 AM – 12 NOON</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">ND I Accountancy</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Mr. Oluwafemi<br><span class="assist">Miss Anthonia</span></span>
+                </div>
+            </div>
+
+            <!-- Card 7: NV -->
+            <div class="schedule-card">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <div class="card-sn">7</div>
+                        <div>
+                            <div class="card-course-name">Flutter Dart</div>
+                            <div class="course-days">WED – THURS</div>
+                        </div>
+                    </div>
+                    <span class="level-badge">NV</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">12 NOON – 2 PM</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">ND I Accountancy</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Mr. Abdullahi / Mr. Cornelius</span>
+                </div>
+            </div>
+
+            <!-- Card 8: NV -->
+            <div class="schedule-card">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <div class="card-sn">8</div>
+                        <div>
+                            <div class="card-course-name">React Native</div>
+                            <div class="course-days">WED, THUR</div>
+                        </div>
+                    </div>
+                    <span class="level-badge">NV</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">10 AM – 12 NOON</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">ND I Accountancy</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Mr. Rejoice / Mr. Oluwafemi</span>
+                </div>
+            </div>
+
+            <!-- Card 10: AI -->
+            <div class="schedule-card">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <div class="card-sn">10</div>
+                        <div>
+                            <div class="card-course-name">Vibe Coding</div>
+                            <div class="course-days">Friday</div>
+                        </div>
+                    </div>
+                    <span class="level-badge">AI</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Time</span>
+                    <span class="card-value time">8 AM – 12 NOON</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Venue</span>
+                    <span class="card-value">ND I Business Admin</span>
+                </div>
+                <div class="card-row">
+                    <span class="card-label">Instructor</span>
+                    <span class="card-value">Mr. Oluwafemi / Mr. Ademola<br><span class="assist">Miss Anthonia</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <!-- <div class="footer">
+            <div class="footer-item">
+                <span class="icon">🎓</span>
+                Software Engineering Program
+            </div>
+            <div class="footer-item">
+                <span class="icon">💻</span>
+                Full Stack • Mobile • AI
+            </div>
+            <div class="footer-item">
+                <span class="icon">🌐</span>
+                sqi.edu.ng
+            </div>
+        </div> -->
+
+        <p class="footer-tagline">
+            Study at <a href="https://sqi.edu.ng" target="_blank" rel="noopener">SQI</a>… Succeed Anywhere!
+            &nbsp;•&nbsp; Making Africa a Pool of Tech Talents
+        </p>
+
+        <div class="accent-line"></div>
+    </div>
+</body>
+
+</html>
